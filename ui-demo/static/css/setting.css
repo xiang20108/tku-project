@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    cursor: url('../images/pen.png'), auto;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    background: #161623;
+}
+
+.box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, .1);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.box .inputBox {
+    position: relative;
+}
+
+.box .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.box .inputBox label{
+    position: absolute;
+    top: -18px;
+    left: 0;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #03a9f4;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.box .buttonBox{
+    position: relative;
+    text-align: center;
+}
+
+.box .buttonBox input[type="reset"],
+.box .buttonBox input[type="submit"]
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background:#03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.box .buttonBox .homeButton{
+    display: inline-block;
+    width: 75px;
+    height: 40;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background:#03a9f4;
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.box .selectBox{
+    display: block;
+    position: relative;
+}
+
+.box .selectBox label{
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #03a9f4;
+    pointer-events: none;
+}
+
+.box .selectBox select{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.box .selectBox option{
+    background: #505050;
+}
+
+/* for scroll button */
+.scroll{
+    position: fixed;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 15%;
+    text-align: center;
+    justify-content:center;
+    color: #fff;
+    font-size: 14px;
+    z-index: 10000;
+}
+
+.scroll:hover{
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.scroll img{
+    width: 100%;
+}
+
+.scroll.home{
+    bottom: calc(5% + 90px);
+}
+
+
+.scroll.top{
+    bottom: calc(5% + 45px);
+}
+
+.scroll.bottom{
+    bottom: calc(5% + 0px);
+}

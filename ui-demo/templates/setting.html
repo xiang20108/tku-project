@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/rocket.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <a href="#" class="scroll top"><img src="{% static 'images/top.png' %}" alt="top"></a>
+    <a href="#bottom" class="scroll bottom"><img src="{% static 'images/bottom.png' %}" alt="bottom"></a>
+    <a href="/" class="scroll home"><img src="{% static 'images/home.png' %}" alt="home"></a>
+    <div class="box" >
+        <h2>Setting Parameters</h2> 
+        <form id="form" action="output" method="get" autocomplete="off">
+            {% for d in data %}
+            {% if d.type == "text" %}
+            <div class="inputBox" id="{{d.name}}">
+                <input type="{{d.type}}" name="{{d.name}}" required="" value="{{d.value}}" placeholder = "{{d.placeholder}}">
+                <label>{{d.label}}</label>
+            </div>
+            {% elif d.type == "readonly" %}
+            <div class="inputBox" id="{{d.name}}">
+                <input type="{{d.type}}" name="{{d.name}}" required="" value="{{d.value}}" placeholder = "{{d.placeholder}}" readonly>
+                <label>{{d.label}}</label>
+            </div>
+            {% else %}
+            <div class="selectBox" id="{{d.name}}">
+                <label for="{{ d.name }}">{{d.label}}</label>
+                <select id="{{d.name}}-selectLabel" name="{{ d.name }}" aria-readonly="true">
+                    <option value="{{ d.value.default }}" selected>{{ d.value.default }}</option>
+                    {% for opt in d.value.others %}
+                    <option value="{{opt}}">{{opt}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="buttonBox">
+                <input type="reset" name="" value="Reset">
+                <input type="submit" name="" value="Apply">
+            </div>
+        </form>
+        <div id="bottom"></div>
+    </div>
+    <script src="{% static 'javascripts/dynamicForm/' %}{{model_name}}.js"></script>
+</body>
+</html>

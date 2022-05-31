@@ -1,0 +1,10 @@
+imbalanced-learn
+keras==2.8.0
+matplotlib
+numpy
+pandas
+scikit-learn
+TA-Lib
+tensorflow==2.8.0
+django
+channels

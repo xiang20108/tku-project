@@ -1,0 +1,276 @@
+{
+    "general": [
+        {
+            "type": "option",
+            "name": "label",
+            "value": {
+                "default": "mean",
+                "others": ["exact"]
+            },
+            "label": "Investment Strategy"
+        }
+    ],
+    "MLPClassifier": [
+        {
+            "type": "text",
+            "name": "hiddenLayerSizes",
+            "value": "32, 64, 32",
+            "placeholder": "int list, ex. 32, 64, 32",
+            "label": "Hidden Layer Sizes"
+        },
+        {
+            "type": "option",
+            "name": "activation",
+            "value": {
+                "default": "relu",
+                "others": ["identity", "logistic", "tanh"]
+            },
+            "label": "Activation"
+        },
+        {
+            "type": "option",
+            "name": "solver",
+            "value":{
+                "default": "adam",
+                "others": ["lbfgs", "sgd"]
+            },
+            "label": "Solver"
+        },
+        {
+            "type": "text",
+            "name": "alpha",
+            "value": "0.0001",
+            "placeholder": "float, ex. 0.0001",
+            "label": "Alpha"
+        },
+        {
+            "type": "text",
+            "name": "batchSize",
+            "value": "auto",
+            "placeholder": "int, ex. 100",
+            "label": "Batch Size"
+        },
+        {
+            "type": "option",
+            "name": "learningRate",
+            "value":{
+                "default": "constant",
+                "others": ["invscaling", "adaptive"]
+            },
+            "label": "Learning Rate for 'sgd' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "learningRateInit",
+            "value": "0.001",
+            "placeholder": "float, ex. 0.001",
+            "label": "Learning Rate Init for 'sgd' or 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "powerT",
+            "value": "0.5",
+            "placeholder": "float, ex. 0.5",
+            "label": "Power T for 'sgd' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "maxIter",
+            "value": "200",
+            "placeholder": "int, ex. 200",
+            "label": "Max Iter"
+        },
+        {
+            "type": "option",
+            "name": "shuffle",
+            "value":{
+                "default": "True",
+                "others": ["False"]
+            },
+            "label": "shuffle for 'sgd' or 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "randomState",
+            "value": "None",
+            "placeholder": "int, ex. 1",
+            "label": "Random State"
+        },
+        {
+            "type": "text",
+            "name": "tol",
+            "value": "0.0001",
+            "placeholder": "float, ex. 0.0001",
+            "label": "Tol"
+        },
+        {
+            "type": "option",
+            "name": "warmStart",
+            "value":{
+                "default": "False",
+                "others": ["True"]
+            },
+            "label": "Warm Start"
+        },
+        {
+            "type": "text",
+            "name": "momentum",
+            "value": "0.9",
+            "placeholder": "float [0~1], ex. 0.9",
+            "label": "Momentum for 'sgd' (solver)"
+        },
+        {
+            "type": "option",
+            "name": "nesterovsMomentum",
+            "value":{
+                "default": "True",
+                "others": ["False"]
+            },
+            "label": "Nesterovs Momentum for 'sgd' (solver)"
+        },
+        {
+            "type": "option",
+            "name": "earlyStopping",
+            "value":{
+                "default": "True",
+                "others": ["False"]
+            },
+            "label": "Early Stopping for 'sgd' or 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "validationFraction",
+            "value": "0.1",
+            "placeholder": "float [0~1], ex. 0.1",
+            "label": "Validation Fraction"
+        },
+        {
+            "type": "text",
+            "name": "beta1",
+            "value": "0.9",
+            "placeholder": "float [0, 1), ex. 0.9",
+            "label": "Beta 1 for 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "beta2",
+            "value": "0.999",
+            "placeholder": "float [0, 1), ex. 0.999",
+            "label": "Beta 2 for 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "epsilon",
+            "value": "0.00000001",
+            "placeholder": "float, ex. 0.00000001",
+            "label": "Epsilon for 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "nIterNoChange",
+            "value": "10",
+            "placeholder": "int, ex. 10",
+            "label": "N Iter No Change for 'sgd' or 'adam' (solver)"
+        },
+        {
+            "type": "text",
+            "name": "maxFun",
+            "value": "15000",
+            "placeholder": "int, ex. 15000",
+            "label": "Max Fun for 'lbfgs' (solver)"
+        }
+    ],
+    "LSTM": [
+        {
+            "type": "readonly",
+            "name": "layer1",
+            "value": "LSTM(32)",
+            "placeholder": "",
+            "label": "Layer 1 (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "layer2",
+            "value": "LSTM(64)",
+            "placeholder": "",
+            "label": "Layer 2 (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "layer3",
+            "value": "LSTM(32)",
+            "placeholder": "",
+            "label": "Layer 3 (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "outputLayer",
+            "value": "Dense(3, activation='softmax')",
+            "placeholder": "",
+            "label": "Output Layer (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "optimizer",
+            "value": "adam",
+            "placeholder": "",
+            "label": "Optimizer (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "learningRate",
+            "value": "0.0005",
+            "placeholder": "",
+            "label": "Learning Rate (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "beta1",
+            "value": "0.9",
+            "placeholder": "",
+            "label": "Beta 1 (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "beta2",
+            "value": "0.999",
+            "placeholder": "",
+            "label": "Beta 2 (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "epsilon",
+            "value": "None",
+            "placeholder": "",
+            "label": "Epsilon (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "decay",
+            "value": "0.0",
+            "placeholder": "",
+            "label": "Decay (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "amsgrad",
+            "value": "False",
+            "placeholder": "",
+            "label": "Amsgrad (readonly)"
+        },
+        {
+            "type": "readonly",
+            "name": "loss",
+            "value": "categorical_crossentropy",
+            "placeholder": "",
+            "label": "Loss"
+        },
+        {
+            "type": "readonly",
+            "name": "metrics",
+            "value": "accuracy",
+            "placeholder": "",
+            "label": "Metrics"
+        }
+    ]
+}

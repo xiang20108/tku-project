@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/rocket.png' %}">
+    <link rel="stylesheet" href="{% static 'css/setting.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <a href="/" class="scroll home"><img src="{% static 'images/home.png' %}" alt="home"></a>
+    <div class="box" >
+        <h2>Setting Parameters</h2> 
+        <form id="form" action="output" method="get" autocomplete="off">
+            <div class="inputBox" id="{{init_cash.name}}">
+                <input type="{{init_cash.type}}" name="{{init_cash.name}}" required="" value="{{init_cash.value}}" placeholder = "{{init_cash.placeholder}}">
+                <label>{{init_cash.label}}</label>
+            </div>
+            {% if records %}
+            <div class="selectBox" id="{{records.name}}">
+                <label for="{{ records.name }}">{{records.label}}</label>
+                <select id="{{records.name}}-selectLabel" name="{{ records.name }}">
+                    <option value="{{ records.value.default }}" selected>{{ records.value.default }}</option>
+                    {% for opt in records.value.others %}
+                    <option value="{{opt}}">{{opt}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="buttonBox">
+                <input type="reset" name="" value="Reset">
+                <input type="submit" name="" value="Apply">
+            </div>
+            {% else %}
+            <div class="selectBox" id="record">
+                <label for="record">record</label>
+                <select id="record-selectLabel" name="record" disabled>
+                    <option value="no record" selected>no record</option>
+                </select>
+            </div>
+            {% endif %}
+        </form>
+        <div id="bottom"></div>
+    </div>
+    <script src="{% static 'javascripts/dynamicForm/' %}{{model_name}}.js"></script>
+</body>
+</html>
